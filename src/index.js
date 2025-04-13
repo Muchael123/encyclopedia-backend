@@ -13,13 +13,22 @@ app.use(cors({
 }));
 app.use(morgan("combined"));
 const api = "/api"
+function conn(){
 mongoose.connect(process.env.MONGO_URL).then(()=>{
-    console.log(" successful connected  to mongo db")
+    console.log(" successful connected  to mongo db");
+    startServer();
 })
 .catch((error)=>{
     console.log(error.message)
-    process.exit(1)
+    setTimeout(()=>{
+        conn()
+    }, 5000)
 })
+}
+
+
+
+function startServer(){
 app.use(json())
 
 app.get("/", (req, res)=>{
@@ -33,3 +42,6 @@ app.listen(PORT, ()=>{
     console.log(`Server running at http://localhost:${PORT}`);
     
 }); 
+}
+
+conn();
