@@ -1,5 +1,5 @@
-import Answer from "../../models/answer";
-import TestQuiz from "../../models/testquiz";
+import Answer from "../../models/answer.js";
+import TestQuiz from "../../models/testquiz.js";
 
 export default async function CheckQuizAnswer(req, res){
     const {user} = req;

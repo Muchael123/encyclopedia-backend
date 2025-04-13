@@ -45,7 +45,9 @@ export default async function AddQuestion(req, res){
         const testquiz = await TestQuiz.create({
             questions:generatedQuiz,
             user: userDet._id,
-            topicid
+            topicid,
+            totalPoints: generatedQuiz.length,
+            completed: false,
         })
         res.status(201).json({message: "Quiz generated successfully", id: testquiz._id})
     }

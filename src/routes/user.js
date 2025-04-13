@@ -8,6 +8,7 @@ import fetchGradeTopics from "../controller/user/fetchgradetopics.js";
 import fetchQuizes from "../controller/user/fetchQuizes.js";
 import fetchQuizById from "../controller/user/fetchQuiz.js";
 import addQuizAnswers, { ValidateAnswer } from "../controller/user/AddQuizAnswers.js";
+import CheckQuizAnswer from "../controller/user/fetchQuizAnswer.js"
 const router=Router()
 router.use(validateUser)
 router.post("/likes", async (req, res) => {
@@ -32,7 +33,7 @@ router.get("/questions", fetchQuizes);
 router.post("/genquiz", validateQuiz, AddQuestion);
 router.get("/quiz/:quizId", fetchQuizById);
 router.post("/answers/:quizId",ValidateAnswer, addQuizAnswers);
-// router.get("/answers/:quizId", );
+router.get("/answers/:quizId", CheckQuizAnswer);
 
 
 export default router 
