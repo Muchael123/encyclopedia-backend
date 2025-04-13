@@ -4,7 +4,7 @@ import validateUser from "../middlewares/validateuser.js";
 import AddQuestion, { validateQuiz } from "../controller/user/addQuestions.js";
 import fetchUserGrades from "../controller/user/fetcUserGrades.js";
 import { GetGradeSubjects } from "../controller/admin/getsubjects.js";
-import fetchGradeTopics from "../controller/user/fetchGradeTopics.js";
+import fetchGradeTopics from "../controller/user/fetchgradetopics.js";
 import fetchQuizes from "../controller/user/fetchQuizes.js";
 import fetchQuizById from "../controller/user/fetchQuiz.js";
 import addQuizAnswers, { ValidateAnswer } from "../controller/user/AddQuizAnswers.js";
